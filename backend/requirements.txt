@@ -7,7 +7,7 @@ flask
 flask_caching
 flask_compress
 flask_cors
-flask_inputfilter==0.0.7.1
+flask_inputfilter
 flask_jwt_extended
 flask_limiter
 flask_migrate

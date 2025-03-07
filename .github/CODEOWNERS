@@ -2,6 +2,7 @@
 
 /.github/  @ops-team
 /.github/CODEOWNERS @LeanderCS, @Nalochen
+/.github/ISSUE_TEMPLATE/ @LeanderCS, @Nalochen
 
 /backend/  @backend-team
 

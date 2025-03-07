@@ -2,13 +2,12 @@ name: Create new release
 
 on:
   release:
-    types: [publish]
+    types: [published]
 
 jobs:
   push_frontend_to_registry:
     name: Push frontend docker image to Docker Hub
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     permissions:
       packages: write
       contents: read
@@ -40,17 +39,9 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.output.digest }}
-          push-to-registry: true
-
   push_backend_to_registry:
     name: Push backend docker image to Docker Hub
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     permissions:
       packages: write
       contents: read
@@ -82,17 +73,9 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.output.digest }}
-          push-to-registry: true
-
   push_worker_to_registry:
     name: Push worker docker image to Docker Hub
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     permissions:
       packages: write
       contents: read
@@ -124,17 +107,9 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.output.digest }}
-          push-to-registry: true
-
   push_certbot_to_registry:
     name: Push certbot docker image to Docker Hub
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     permissions:
       packages: write
       contents: read
@@ -165,10 +140,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.output.digest }}
-          push-to-registry: true
