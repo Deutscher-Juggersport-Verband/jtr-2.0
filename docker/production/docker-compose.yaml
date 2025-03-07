@@ -84,7 +84,6 @@ services:
       SECRET_KEY: 'secret'
       GENERATE_TEST_DATA: True
     volumes:
-      - ./nginx:/etc/letsencrypt/live/jugger-tourna.de # This path is to fake the certbot certificate generation
       - certs:/etc/letsencrypt
       - ./assets:/app/DataDomain/assets
     ports:
@@ -103,7 +102,6 @@ services:
       dockerfile: docker/production/frontend/frontend.Dockerfile
     container_name: frontend
     volumes:
-      - ./nginx:/etc/letsencrypt/live/jugger-tourna.de # This path is to fake the certbot certificate generation
       - certs:/etc/letsencrypt
       - webroot:/usr/share/nginx/html
       - ./assets:/usr/share/nginx/html/assets
@@ -122,4 +120,9 @@ networks:
 volumes:
   mysql_db_data: {}
   certs:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./nginx
+      o: bind
   webroot:
