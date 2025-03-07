@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask_jwt_extended import jwt_required
 
-from config import cache, limiter
+from config import cache, limiter, jwt_guest_required
 from DataDomain.Model import Response
 from ExternalApi.UserFrontend.config.extensions import create_user_cache_key
 from ExternalApi.UserFrontend.Handler import (
@@ -88,6 +88,7 @@ def isMemberOfTeam(escapedName) -> Response:
 
 @user_frontend.route('/update-user',
                      methods=['PUT'], endpoint='update-user')
+@limiter.limit('30 per day, 10 per hour, 3 per minute')
 @jwt_required()
 @UpdateUserInputFilter.validate()
 def updateUser() -> Response:
@@ -96,7 +97,7 @@ def updateUser() -> Response:
 
 @user_frontend.route('/update-user-picture',
                      methods=['PUT'], endpoint='update-user-picture')
-@limiter.limit('3 per minute')
+@limiter.limit('30 per day, 10 per hour, 3 per minute')
 @jwt_required()
 @UpdateUserPictureInputFilter.validate()
 def updateUserPicture() -> Response:
@@ -106,7 +107,7 @@ def updateUserPicture() -> Response:
 @user_frontend.route('/update-user-language',
                      methods=['PUT'],
                      endpoint='update-user-language')
-@limiter.limit('4 per minute')
+@limiter.limit('50 per day, 10 per hour, 4 per minute')
 @jwt_required()
 @UpdateUserLanguageInputFilter.validate()
 def updateUserLanguage() -> Response:
@@ -114,14 +115,16 @@ def updateUserLanguage() -> Response:
 
 
 @user_frontend.route('/authenticate-user', methods=['POST'], endpoint='authenticate-user')
-@limiter.limit('5 per minute')
+@limiter.limit('60 per day, 20 per hour, 5 per minute')
+@jwt_guest_required()
 @AuthenticateUserInputFilter.validate()
 def authenticateUser() -> Response:
     return AuthenticateUserHandler.handle()
 
 
 @user_frontend.route('/create-user', methods=['POST'], endpoint='create-user')
-@limiter.limit('2 per minute')
+@limiter.limit('15 per day, 7 per hour, 2 per minute')
+@jwt_guest_required()
 @CreateUserInputFilter.validate()
 def createUser() -> Response:
     return CreateUserHandler.handle()
@@ -130,7 +133,8 @@ def createUser() -> Response:
 @user_frontend.route('/create-password-reset',
                      methods=['POST'],
                      endpoint='create-password-reset')
-@limiter.limit('2 per minute')
+@limiter.limit('10 per day, 7 per hour, 2 per minute')
+@jwt_guest_required()
 @CreatePasswordResetInputFilter.validate()
 def createPasswordReset() -> Response:
     return CreatePasswordResetHandler.handle()
@@ -139,7 +143,8 @@ def createPasswordReset() -> Response:
 @user_frontend.route('/create-new-password',
                      methods=['PUT'],
                      endpoint='create-new-password')
-@limiter.limit('2 per minute')
+@limiter.limit('30 per day, 10 per hour, 2 per minute')
+@jwt_guest_required()
 @CreateNewPasswordInputFilter.validate()
 def createNewPassword() -> Response:
     return CreateNewPasswordHandler.handle()
@@ -148,7 +153,7 @@ def createNewPassword() -> Response:
 @user_frontend.route('/delete-user',
                      methods=['DELETE'],
                      endpoint='delete-user')
-@limiter.limit('2 per minute')
+@limiter.limit('30 per day, 10 per hour, 2 per minute')
 @jwt_required()
 def deleteUser() -> Response:
     return DeleteUserHandler.handle()
