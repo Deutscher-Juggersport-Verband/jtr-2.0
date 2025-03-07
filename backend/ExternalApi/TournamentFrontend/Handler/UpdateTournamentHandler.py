@@ -12,7 +12,6 @@ from ExternalApi.TournamentFrontend.config.extensions import clearTournamentCach
 
 
 class UpdateTournamentHandler:
-    """Handler for updating a tournament"""
 
     @staticmethod
     def handle() -> Response:

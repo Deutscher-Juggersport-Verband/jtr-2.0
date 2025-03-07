@@ -11,7 +11,6 @@ from DataDomain.Model import Response
 
 
 class UpdateMembershipHandler:
-    """Handler for updating a membership"""
 
     @staticmethod
     def handle() -> Response:
@@ -22,10 +21,10 @@ class UpdateMembershipHandler:
         userId: int = data.get('userId')
         userRole: str = data.get('userRole')
 
-        if not IsUserPartOfTeamRule.applies(userId, teamId):
+        if not IsUserPartOfTeamRule.applies(userId=userId, teamId=teamId):
             return Response(status=404)
 
-        if not IsCurrentUserAdminOfTeamRule.applies(teamId):
+        if not IsCurrentUserAdminOfTeamRule.applies(teamId=teamId):
             return Response(status=403)
 
         try:

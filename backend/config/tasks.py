@@ -13,7 +13,6 @@ celery = Celery(
 
 @celery.task(name="send_email_task")
 def send_email_task(data: SendMailTaskBody):
-    """Task to send an email asynchronously."""
 
     logger.info(
         f"Worker | send_email_task | Created | Sending email to {

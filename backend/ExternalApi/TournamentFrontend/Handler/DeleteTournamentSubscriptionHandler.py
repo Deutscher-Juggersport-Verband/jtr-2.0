@@ -13,7 +13,6 @@ from DataDomain.Model import Response
 
 
 class DeleteTournamentSubscriptionHandler:
-    """Handler for deleting a tournament subscription"""
 
     @staticmethod
     def handle() -> Response:

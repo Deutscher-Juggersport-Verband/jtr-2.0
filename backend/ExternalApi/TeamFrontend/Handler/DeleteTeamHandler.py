@@ -9,7 +9,6 @@ from ExternalApi.TeamFrontend.config.extensions import clearTeamCache
 
 
 class DeleteTeamHandler:
-    """Handler for deleting a team"""
 
     @staticmethod
     def handle() -> Response:

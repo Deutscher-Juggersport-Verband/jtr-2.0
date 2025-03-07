@@ -22,7 +22,6 @@ from Infrastructure.Logger import logger
 
 
 class TeamRepository:
-    """Repository for team related queries"""
 
     @staticmethod
     def exists(teamId: int | None = None, escapedName: str | None = None) -> bool:

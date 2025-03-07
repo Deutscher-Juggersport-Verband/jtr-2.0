@@ -8,7 +8,6 @@ from ExternalApi.UserFrontend.config.extensions import clearUserCache
 
 
 class UpdateUserHandler:
-    """Handler for updating a user"""
 
     @staticmethod
     def handle() -> Response:

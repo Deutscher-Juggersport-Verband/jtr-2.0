@@ -4,7 +4,6 @@ from flask_inputfilter.Validator import IsStringValidator
 
 
 class CreatePasswordResetInputFilter(InputFilter):
-    """The input filter for the create-password-reset route"""
 
     def __init__(self) -> None:
 

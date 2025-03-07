@@ -13,7 +13,6 @@ from ExternalApi.TournamentFrontend.config.extensions import clearTournamentCach
 
 
 class DeleteTournamentHandler:
-    """Handler for deleting a tournament"""
 
     @staticmethod
     def handle() -> Response:

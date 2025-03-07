@@ -9,7 +9,6 @@ from ExternalApi.TeamFrontend.config.extensions import clearTeamCache
 
 
 class UpdateTeamHandler:
-    """Handler for updating a team"""
 
     @staticmethod
     def handle() -> Response:

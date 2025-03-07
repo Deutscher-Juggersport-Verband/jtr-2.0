@@ -12,7 +12,6 @@ from DataDomain.Model import Response
 
 
 class CreateTournamentNotificationHandler:
-    """Handler for creating tournament notifications"""
 
     @staticmethod
     def handle() -> Response:

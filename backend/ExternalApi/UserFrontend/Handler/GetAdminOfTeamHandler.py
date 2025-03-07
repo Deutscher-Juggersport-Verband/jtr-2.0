@@ -7,7 +7,6 @@ from DataDomain.Model import Response
 
 
 class GetAdminOfTeamsHandler:
-    """Handler for getting all teams where the current user is an admin"""
 
     @staticmethod
     def handle() -> Response:

@@ -9,7 +9,6 @@ from DataDomain.Model import Response
 
 
 class GetTournamentDetailsHandler:
-    """Handler for getting tournament details"""
 
     @staticmethod
     def handle() -> Response:

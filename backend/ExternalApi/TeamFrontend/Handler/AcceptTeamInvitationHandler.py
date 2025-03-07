@@ -12,7 +12,6 @@ from DataDomain.Model import Response
 
 
 class AcceptTeamInvitationHandler:
-    """Handler for accepting a team invitation of a user"""
 
     @staticmethod
     def handle() -> Response:

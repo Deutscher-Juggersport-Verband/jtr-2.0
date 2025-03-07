@@ -4,7 +4,6 @@ from flask_inputfilter.Validator import IsIntegerValidator
 
 
 class IsAdminOfOrganizerInputFilter(InputFilter):
-    """The input filter for the is-admin-of-organizer route"""
 
     def __init__(self) -> None:
 

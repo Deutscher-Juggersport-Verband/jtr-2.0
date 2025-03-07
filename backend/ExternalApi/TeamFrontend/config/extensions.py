@@ -5,7 +5,6 @@ from config import cache
 
 
 def create_team_cache_key() -> str:
-    """Create cache key for team"""
 
     escapedName = request.view_args.get('escapedName')
 
@@ -15,7 +14,6 @@ def create_team_cache_key() -> str:
 
 
 def clearTeamCache(teamId: int) -> None:
-    """Clear cache for team"""
 
     cache.delete('team-overview')
 
@@ -23,7 +21,6 @@ def clearTeamCache(teamId: int) -> None:
 
 
 def clearCompleteTeamCache() -> None:
-    """Clear complete team cache"""
 
     teamKeys = cache.cache._read_client.keys('team-*')
 
@@ -31,7 +28,6 @@ def clearCompleteTeamCache() -> None:
 
 
 def create_team_historic_points_cache_key() -> str:
-    """Create cache key for historic team points"""
 
     teamId = request.view_args.get('teamId')
 
@@ -39,6 +35,5 @@ def create_team_historic_points_cache_key() -> str:
 
 
 def clearTeamHistoricPointsCache(teamId: int) -> None:
-    """Clear cache for historic team points"""
 
     cache.delete(f'team-historic-points-{teamId}')

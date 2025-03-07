@@ -8,7 +8,6 @@ from flask_inputfilter.Validator import (
 
 
 class CreateTeamInputFilter(InputFilter):
-    """The input filter for the create-team route"""
 
     def __init__(self) -> None:
 

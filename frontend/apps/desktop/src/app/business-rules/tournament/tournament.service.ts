@@ -13,11 +13,6 @@ import {
   TournamentStatus,
 } from '@jtr/data-domain/tournament-data';
 
-const CREATE_TOURNAMENT_ENDPOINT = '/api/tournament-frontend/create-tournament';
-const UPDATE_TOURNAMENT_ENDPOINT = '/api/tournament-frontend/update-tournament';
-const UPDATE_TOURNAMENT_STATUS_ENDPOINT =
-  '/api/tournament-frontend/update-tournament-status';
-
 export interface CreateTournamentRequestBody {
   accommodationCosts?: number;
   accommodationCostsType?: PricingTypeEnum;
@@ -172,7 +167,7 @@ export class TournamentService {
     };
 
     return this.http.post<CreateTournamentResponse>(
-      CREATE_TOURNAMENT_ENDPOINT,
+      '/api/tournament-frontend/create-tournament',
       request
     );
   }
@@ -225,12 +220,12 @@ export class TournamentService {
       tournamentSystemUrl: body.rules.tournamentSystemLink,
     };
 
-    return this.http.put<void>(UPDATE_TOURNAMENT_ENDPOINT, request);
+    return this.http.put<void>('/api/tournament-frontend/update-tournament', request);
   }
 
   public updateStatus(
     request: UpdateTournamentStatusRequestBody
   ): Observable<void> {
-    return this.http.put<void>(UPDATE_TOURNAMENT_STATUS_ENDPOINT, request);
+    return this.http.put<void>('/api/tournament-frontend/update-tournament-status', request);
   }
 }

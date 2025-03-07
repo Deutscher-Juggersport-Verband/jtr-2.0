@@ -10,7 +10,6 @@ from DataDomain.Model import Response
 
 
 class SendTeamInvitationHandler:
-    """Handler for sending a team invitation to a user"""
 
     @staticmethod
     def handle() -> Response:
@@ -25,7 +24,7 @@ class SendTeamInvitationHandler:
 
         user = UserRepository.get(userId)
 
-        if IsUserPartOfTeamRule.applies(userId, teamId):
+        if IsUserPartOfTeamRule.applies(userId=userId, teamId=teamId):
             return Response(
                 response='User is already a member of team',
                 status=400)

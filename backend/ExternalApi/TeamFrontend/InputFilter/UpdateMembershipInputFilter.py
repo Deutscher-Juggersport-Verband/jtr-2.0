@@ -6,7 +6,6 @@ from DataDomain.Database.Enum import UserRoleTypesEnum
 
 
 class UpdateMembershipInputFilter(InputFilter):
-    """The input filter for the update-membership route"""
 
     def __init__(self) -> None:
 

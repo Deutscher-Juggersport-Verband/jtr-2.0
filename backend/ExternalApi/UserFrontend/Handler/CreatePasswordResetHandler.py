@@ -11,7 +11,6 @@ from DataDomain.Model import Response
 
 
 class CreatePasswordResetHandler:
-    """Handler for creating a passwort reset request"""
 
     @staticmethod
     def handle() -> Response:
@@ -34,8 +33,8 @@ class CreatePasswordResetHandler:
                 )
             )
 
-        except Exception as e:
-            return Response(status=500, response=str(e))
+        except Exception:
+            return Response(status=500)
 
         return Response(
             status=200

@@ -3,7 +3,6 @@ from DataDomain.Model import Response
 
 
 class GetUserOverviewHandler:
-    """Handler for getting user overview"""
 
     @staticmethod
     def handle() -> Response:

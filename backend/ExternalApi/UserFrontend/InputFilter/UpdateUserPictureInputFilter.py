@@ -7,7 +7,6 @@ from flask_inputfilter.Validator import (
 
 
 class UpdateUserPictureInputFilter(InputFilter):
-    """The input filter for the update-user-picture route"""
 
     def __init__(self) -> None:
 

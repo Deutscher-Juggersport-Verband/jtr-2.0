@@ -1,4 +1,3 @@
-
 from flask import g
 
 from BusinessDomain.Team.Rule import DoesTeamExistsRule
@@ -9,7 +8,6 @@ from DataDomain.Model import Response
 
 
 class UpdateTeamPictureHandler:
-    """Handler for updating a user picture"""
 
     @staticmethod
     def handle() -> Response:

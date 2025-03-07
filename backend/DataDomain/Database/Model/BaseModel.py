@@ -1,6 +1,5 @@
 
 class BaseModel:
-    """Base model class for all models"""
 
     __abstract__ = True
 

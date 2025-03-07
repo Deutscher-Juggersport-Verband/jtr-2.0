@@ -7,7 +7,6 @@ from DataDomain.Model import Response
 
 
 class CreateNewPasswordHandler:
-    """Handler for creating a new passwort"""
 
     @staticmethod
     def handle() -> Response:

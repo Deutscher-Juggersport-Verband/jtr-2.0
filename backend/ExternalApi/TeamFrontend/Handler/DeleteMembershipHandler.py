@@ -12,7 +12,6 @@ from DataDomain.Model import Response
 
 
 class DeleteMembershipHandler:
-    """Handler for deleting an is_part_of relation"""
 
     @staticmethod
     def handle() -> Response:

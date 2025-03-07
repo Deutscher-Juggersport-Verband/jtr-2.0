@@ -5,7 +5,6 @@ from config import cache
 
 
 def create_user_cache_key() -> str | None:
-    """Create cache key for user"""
 
     escapedUsername = request.view_args.get('escapedUsername')
 
@@ -18,7 +17,6 @@ def create_user_cache_key() -> str | None:
 
 
 def clearUserCache(userId: int) -> None:
-    """Clear cache for user"""
 
     cache.delete('user-overview')
 
@@ -26,7 +24,6 @@ def clearUserCache(userId: int) -> None:
 
 
 def clearCompleteUserCache() -> None:
-    """Clear complete user cache"""
 
     userKeys = cache.cache._read_client.keys('user-*')
 

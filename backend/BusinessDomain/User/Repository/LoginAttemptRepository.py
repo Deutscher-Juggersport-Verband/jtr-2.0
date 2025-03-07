@@ -4,7 +4,6 @@ from Infrastructure.Logger import logger
 
 
 class LoginAttemptRepository:
-    """Repository for LoginAttempt related queries"""
 
     @staticmethod
     def exists(username: str) -> bool:

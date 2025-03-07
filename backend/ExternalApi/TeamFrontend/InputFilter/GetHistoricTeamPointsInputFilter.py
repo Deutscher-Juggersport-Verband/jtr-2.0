@@ -4,7 +4,6 @@ from flask_inputfilter.Validator import IsIntegerValidator
 
 
 class GetHistoricTeamPointsInputFilter(InputFilter):
-    """The input filter for the get-historic-team-points route"""
 
     def __init__(self) -> None:
 

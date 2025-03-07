@@ -4,7 +4,6 @@ from flask_inputfilter.Validator import IsIntegerValidator
 
 
 class CreateTournamentSubscriptionInputFilter(InputFilter):
-    """The input filter for the create-tournament-subscription route"""
 
     def __init__(self) -> None:
 

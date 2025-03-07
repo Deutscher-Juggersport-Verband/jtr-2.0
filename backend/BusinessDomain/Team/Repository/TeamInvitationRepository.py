@@ -5,7 +5,6 @@ from Infrastructure.Logger import logger
 
 
 class TeamInvitationRepository:
-    """Repository for team_invitations related queries"""
 
     @staticmethod
     def get(hash: str) -> team_invitations:

@@ -16,7 +16,6 @@ externalApiFolder = Blueprint(
 
 
 class GetSwaggerFileHandler:
-    """Handler for getting swagger file"""
 
     def handle(self) -> Response:
         """Get swagger file"""
