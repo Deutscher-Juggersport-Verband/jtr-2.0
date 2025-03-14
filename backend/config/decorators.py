@@ -1,8 +1,9 @@
 from functools import wraps
+from typing import Any, Optional, Sequence, Union
+
 from flask import current_app
-from typing import Optional, Any, Sequence, Union
 from flask_jwt_extended import verify_jwt_in_request
-from flask_jwt_extended.exceptions import NoAuthorizationError, InvalidHeaderError
+from flask_jwt_extended.exceptions import InvalidHeaderError, NoAuthorizationError
 
 from DataDomain.Model import Response
 
@@ -55,8 +56,12 @@ def jwt_guest_required(
         def decorator(*args, **kwargs):
             try:
                 verify_jwt_in_request(
-                    optional, fresh, refresh, locations, verify_type, skip_revocation_check
-                )
+                    optional,
+                    fresh,
+                    refresh,
+                    locations,
+                    verify_type,
+                    skip_revocation_check)
                 return Response("Valid token should not be provided", 400)
             except (NoAuthorizationError, InvalidHeaderError):
                 pass

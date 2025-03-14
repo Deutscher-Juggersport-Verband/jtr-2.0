@@ -31,7 +31,8 @@ class DeleteParticipationHandler:
                 and not IsCurrentUserAdminOfOrganizingTeamRule.applies(tournamentId)):
             return Response(status=403)
 
-        if not DoesParticipationExistsRule.applies(tournamentId=tournamentId, teamId=teamId):
+        if not DoesParticipationExistsRule.applies(
+                tournamentId=tournamentId, teamId=teamId):
             return Response(status=404)
 
         if IsParticipationDeletedRule.applies(tournamentId=tournamentId, teamId=teamId):

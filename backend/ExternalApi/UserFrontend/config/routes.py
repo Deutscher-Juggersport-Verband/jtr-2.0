@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask_jwt_extended import jwt_required
 
-from config import cache, limiter, jwt_guest_required
+from config import cache, jwt_guest_required, limiter
 from DataDomain.Model import Response
 from ExternalApi.UserFrontend.config.extensions import create_user_cache_key
 from ExternalApi.UserFrontend.Handler import (
