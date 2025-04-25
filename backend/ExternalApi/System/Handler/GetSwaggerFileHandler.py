@@ -1,6 +1,5 @@
 import os
 from collections import defaultdict
-from typing import List
 
 import yaml
 from flask import Blueprint
@@ -35,7 +34,7 @@ class GetSwaggerFileHandler:
         )
 
     @staticmethod
-    def __mergeYamlFiles(yamlFilePaths: List[str]) -> dict:
+    def __mergeYamlFiles(yamlFilePaths: list[str]) -> dict:
         """Merge multiple yaml files into a single dictionary"""
 
         mergedData = {

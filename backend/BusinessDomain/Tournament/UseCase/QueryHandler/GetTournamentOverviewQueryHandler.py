@@ -1,5 +1,3 @@
-from typing import List
-
 from BusinessDomain.Tournament.Repository import TournamentRepository
 from BusinessDomain.Tournament.UseCase.QueryHandler.Result import TournamentOverviewResult
 
@@ -7,7 +5,7 @@ from BusinessDomain.Tournament.UseCase.QueryHandler.Result import TournamentOver
 class GetTournamentOverviewQueryHandler:
 
     @staticmethod
-    def execute() -> List[TournamentOverviewResult]:
+    def execute() -> list[TournamentOverviewResult]:
 
         tournaments = TournamentRepository.getPastTournamentOverview()
 

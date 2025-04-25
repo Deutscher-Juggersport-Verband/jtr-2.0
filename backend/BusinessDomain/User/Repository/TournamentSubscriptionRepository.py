@@ -1,5 +1,3 @@
-from typing import List
-
 from DataDomain.Database import db
 from DataDomain.Database.Model import Users, tournament_subscriptions
 from Infrastructure.Logger import logger
@@ -19,7 +17,7 @@ class TournamentSubscriptionRepository:
         ).first()
 
     @staticmethod
-    def getRecipients(tournamentId: int) -> List[Users]:
+    def getRecipients(tournamentId: int) -> list[Users]:
         """Get all subscribed users entry's by tournamentId"""
 
         return Users.query.join(

@@ -1,5 +1,3 @@
-from typing import List
-
 from sqlalchemy import or_
 
 from DataDomain.Database import db
@@ -39,7 +37,7 @@ class UserRepository:
         ).count() > 0
 
     @staticmethod
-    def all() -> List[Users]:
+    def all() -> list[Users]:
         """Get user overview"""
 
         return Users.query.filter(Users.is_deleted == False).all()

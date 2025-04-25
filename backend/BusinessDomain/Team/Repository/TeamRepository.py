@@ -1,5 +1,3 @@
-from typing import List
-
 from sqlalchemy import String, cast, func, or_
 from sqlalchemy.orm import aliased
 
@@ -35,7 +33,7 @@ class TeamRepository:
         ).count() > 0
 
     @staticmethod
-    def all() -> List[TeamOverviewModelElement]:
+    def all() -> list[TeamOverviewModelElement]:
         """Get team overview"""
 
         team_alias = aliased(Teams)
@@ -93,7 +91,7 @@ class TeamRepository:
         ).first()
 
     @staticmethod
-    def getTeamMembers(teamId: int) -> List:
+    def getTeamMembers(teamId: int) -> list:
         """Get team members by team id"""
 
         return db.session.query(
@@ -109,7 +107,7 @@ class TeamRepository:
         ).all()
 
     @staticmethod
-    def getPastTournaments(teamId: int) -> List[PastTournamentsModel]:
+    def getPastTournaments(teamId: int) -> list[PastTournamentsModel]:
         """Get past tournaments by team id"""
 
         return db.session.query(
@@ -127,7 +125,7 @@ class TeamRepository:
         ).all()
 
     @staticmethod
-    def getOrganizedTournaments(teamId: int) -> List[OrganizedTournamentsModel]:
+    def getOrganizedTournaments(teamId: int) -> list[OrganizedTournamentsModel]:
         """Get organized tournaments by team id"""
 
         return db.session.query(
@@ -166,7 +164,7 @@ class TeamRepository:
         return team.id if team else None
 
     @staticmethod
-    def teamsOfUser(userId: int) -> List[Teams]:
+    def teamsOfUser(userId: int) -> list[Teams]:
         """Get all teams of a user"""
 
         return db.session.query(
@@ -179,7 +177,7 @@ class TeamRepository:
         ).all()
 
     @staticmethod
-    def teamsOfAdmin(userId: int) -> List[Teams]:
+    def teamsOfAdmin(userId: int) -> list[Teams]:
         """Get all teams where the user is an admin"""
 
         return db.session.query(

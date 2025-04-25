@@ -7,6 +7,7 @@ RUN apt-get update && \
         curl \
         default-mysql-server \
         erlang \
+        g++ \
         gnupg \
         iputils-ping \
         netcat-openbsd \

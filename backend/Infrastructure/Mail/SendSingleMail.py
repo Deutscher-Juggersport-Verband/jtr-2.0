@@ -1,5 +1,3 @@
-from typing import List
-
 from config import send_email_task
 from worker.Model import SendMailTaskBody
 
@@ -10,7 +8,7 @@ class SendSingleMail:
     @staticmethod
     def send(
         subject: str,
-        recipients: List[str],
+        recipients: list[str],
         body: str,
         html: str | None = None
     ) -> None:
