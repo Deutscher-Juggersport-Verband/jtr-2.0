@@ -1,6 +1,7 @@
 celery
 flask
 flask_migrate
+flask-inputfilter
 pymysql
 redis
 sqlalchemy

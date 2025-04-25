@@ -318,8 +318,8 @@ def downgrade():
     op.drop_table('login_attempts')
     op.drop_table('logs')
     op.drop_table('participates_in')
-    op.drop_table('teams')
     op.drop_table('tournaments')
-    op.drop_table('users')
     op.drop_table('historic_team_points')
+    op.drop_table('teams')
+    op.drop_table('users')
     # ### end Alembic commands ###

@@ -6,7 +6,6 @@ from DataDomain.Model import Response
 
 
 class UpdateUserPictureHandler:
-    """Handler for updating a user picture"""
 
     @staticmethod
     def handle() -> Response:

@@ -13,7 +13,6 @@ from worker.db import db
 
 
 class CalculateTeamScoresHandler:
-    """Celery task handler for calculating team scores"""
 
     FACTORS = [0.24, 0.22, 0.20, 0.18, 0.16]
     PLACE_POINTS = [

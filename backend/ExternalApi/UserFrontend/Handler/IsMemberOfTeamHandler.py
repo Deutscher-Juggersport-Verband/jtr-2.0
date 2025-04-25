@@ -6,7 +6,6 @@ from DataDomain.Model import Response
 
 
 class IsMemberOfTeamHandler:
-    """Handler for getting is user is an admin of a team"""
 
     @staticmethod
     def handle() -> Response:

@@ -6,7 +6,6 @@ from DataDomain.Database.Enum import TournamentStatusTypesEnum
 
 
 class UpdateTournamentStatusInputFilter(InputFilter):
-    """The input filter for the update-tournament-status route"""
 
     def __init__(self) -> None:
 

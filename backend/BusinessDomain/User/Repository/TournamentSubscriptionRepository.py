@@ -4,7 +4,6 @@ from Infrastructure.Logger import logger
 
 
 class TournamentSubscriptionRepository:
-    """Repository for tournament_subscriptions related queries"""
 
     @staticmethod
     def get(userId: int, tournamentId: int) -> tournament_subscriptions:

@@ -60,6 +60,7 @@ def getPastTournamentOverview() -> Response:
 
 @tournament_frontend.route('/update-tournament',
                            methods=['PUT'], endpoint='update-tournament')
+@limiter.limit('30 per day, 10 per hour, 3 per minute')
 @jwt_required()
 @UpdateTournamentInputFilter.validate()
 def updateTournament() -> Response:
@@ -68,6 +69,7 @@ def updateTournament() -> Response:
 
 @tournament_frontend.route('/update-tournament-status',
                            methods=['PUT'], endpoint='update-tournament-status')
+@limiter.limit('20 per day, 8 per hour, 2 per minute')
 @jwt_required()
 @UpdateTournamentStatusInputFilter.validate()
 def updateTournamentStatus() -> Response:
@@ -76,7 +78,7 @@ def updateTournamentStatus() -> Response:
 
 @tournament_frontend.route('/create-tournament',
                            methods=['POST'], endpoint='create-tournament')
-@limiter.limit('2 per minute')
+@limiter.limit('20 per day, 10 per hour, 2 per minute')
 @jwt_required()
 @CreateTournamentInputFilter.validate()
 def createTournament() -> Response:
@@ -85,7 +87,7 @@ def createTournament() -> Response:
 
 @tournament_frontend.route('/create-participation',
                            methods=['POST'], endpoint='create-participation')
-@limiter.limit('2 per minute')
+@limiter.limit('50 per day, 10 per hour, 2 per minute')
 @jwt_required()
 @CreateParticipationInputFilter.validate()
 def createParticipation() -> Response:
@@ -94,7 +96,7 @@ def createParticipation() -> Response:
 
 @tournament_frontend.route('/create-result',
                            methods=['POST'], endpoint='create-result')
-@limiter.limit('2 per minute')
+@limiter.limit('50 per day, 25 per hour, 2 per minute')
 @jwt_required()
 @CreateResultInputFilter.validate()
 def createResult() -> Response:
@@ -103,7 +105,7 @@ def createResult() -> Response:
 
 @tournament_frontend.route('/create-tournament-subscription',
                            methods=['POST'], endpoint='create-tournament-subscription')
-@limiter.limit('2 per minute')
+@limiter.limit('50 per day, 10 per hour, 2 per minute')
 @jwt_required()
 @CreateTournamentSubscriptionInputFilter.validate()
 def createTournamentSubscription() -> Response:
@@ -112,7 +114,7 @@ def createTournamentSubscription() -> Response:
 
 @tournament_frontend.route('/create-tournament-notification',
                            methods=['POST'], endpoint='create-tournament-notification')
-@limiter.limit('2 per minute')
+@limiter.limit('25 per day, 5 per hour, 2 per minute')
 @jwt_required()
 @CreateTournamentNotificationInputFilter.validate()
 def createTournamentNotification() -> Response:
@@ -122,7 +124,7 @@ def createTournamentNotification() -> Response:
 @tournament_frontend.route('/delete-participation',
                            methods=['DELETE'],
                            endpoint='delete-participation')
-@limiter.limit('2 per minute')
+@limiter.limit('50 per day, 10 per hour, 2 per minute')
 @jwt_required()
 @DeleteParticipationInputFilter.validate()
 def deleteParticipation() -> Response:
@@ -132,7 +134,7 @@ def deleteParticipation() -> Response:
 @tournament_frontend.route('/delete-tournament',
                            methods=['DELETE'],
                            endpoint='delete-tournament')
-@limiter.limit('2 per minute')
+@limiter.limit('50 per day, 10 per hour, 2 per minute')
 @jwt_required()
 @DeleteTournamentInputFilter.validate()
 def deleteTournament() -> Response:
@@ -142,7 +144,7 @@ def deleteTournament() -> Response:
 @tournament_frontend.route('/delete-tournament-subscription',
                            methods=['DELETE'],
                            endpoint='delete-tournament-subscription')
-@limiter.limit('2 per minute')
+@limiter.limit('50 per day, 10 per hour, 2 per minute')
 @jwt_required()
 @DeleteTournamentSubscriptionInputFilter.validate()
 def deleteTournamentSubscription() -> Response:

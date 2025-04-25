@@ -5,7 +5,6 @@ from DataDomain.Model import Response
 
 
 class DeleteUserHandler:
-    """Handler for deleting an user"""
 
     @staticmethod
     def handle() -> Response:

@@ -2,7 +2,6 @@ import os
 
 
 class MailConfig:
-    """Mail configuration"""
 
     MAIL_SERVER = os.getenv('MAIL_SERVER')
     MAIL_PORT = int(os.getenv('MAIL_PORT'))

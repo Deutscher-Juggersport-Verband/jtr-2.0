@@ -8,7 +8,6 @@ from worker.Model import SendMailTaskBody
 
 
 class SendMailHandler:
-    """Celery task handler for sending mails"""
 
     @staticmethod
     def handle(data: SendMailTaskBody) -> None:

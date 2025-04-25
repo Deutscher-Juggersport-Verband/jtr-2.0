@@ -8,7 +8,6 @@ from DataDomain.Model import Response
 
 
 class CreateTeamHandler:
-    """Handler for creating a team"""
 
     @staticmethod
     def handle() -> Response:

@@ -4,7 +4,6 @@ from flask_inputfilter.Validator import IsIntegerValidator
 
 
 class CreateParticipationInputFilter(InputFilter):
-    """The input filter for the create-participation route"""
 
     def __init__(self) -> None:
 

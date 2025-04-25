@@ -7,7 +7,6 @@ from DataDomain.Model import Response
 
 
 class GetHistoricTeamPointsHandler:
-    """Handler for getting historic team points"""
 
     @staticmethod
     def handle() -> Response:
@@ -23,7 +22,7 @@ class GetHistoricTeamPointsHandler:
             historicPoints = GetHistoricTeamPointsQueryHandler.execute(
                 GetHistoricTeamPointsQuery(teamId=teamId))
 
-        except Exception as e:
-            return Response(status=500, response=str(e))
+        except Exception:
+            return Response(status=500)
 
         return Response(response=historicPoints, status=200)

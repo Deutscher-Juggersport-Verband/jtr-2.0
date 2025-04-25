@@ -8,7 +8,6 @@ from flask_inputfilter.Validator import (
 
 
 class CreateResultInputFilter(InputFilter):
-    """The input filter for the create-result route"""
 
     def __init__(self) -> None:
 

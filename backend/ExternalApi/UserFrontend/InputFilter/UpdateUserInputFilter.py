@@ -9,7 +9,6 @@ from flask_inputfilter.Validator import (
 
 
 class UpdateUserInputFilter(InputFilter):
-    """The input filter for the update-user route"""
 
     def __init__(self) -> None:
 

@@ -9,7 +9,6 @@ from flask_inputfilter.Validator import (
 
 
 class CreateUserInputFilter(InputFilter):
-    """The input filter for the register route"""
 
     def __init__(self) -> None:
 

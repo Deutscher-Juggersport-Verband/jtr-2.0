@@ -69,6 +69,7 @@ def updateMembership() -> Response:
 
 @team_frontend.route('/update-team',
                      methods=['PUT'], endpoint='update-team')
+@limiter.limit('30 per day, 10 per hour, 3 per minute')
 @jwt_required()
 @UpdateTeamInputFilter.validate()
 def updateTeam() -> Response:
@@ -77,7 +78,7 @@ def updateTeam() -> Response:
 
 @team_frontend.route('/update-team-picture',
                      methods=['PUT'], endpoint='update-team-picture')
-@limiter.limit('3 per minute')
+@limiter.limit('30 per day, 10 per hour, 3 per minute')
 @jwt_required()
 @UpdateTeamPictureInputFilter.validate()
 def updateTeamPicture() -> Response:
@@ -86,7 +87,7 @@ def updateTeamPicture() -> Response:
 
 @team_frontend.route('/create-team',
                      methods=['POST'], endpoint='create-team')
-@limiter.limit('2 per minute')
+@limiter.limit('15 per day, 5 per hour, 2 per minute')
 @jwt_required()
 @CreateTeamInputFilter.validate()
 def createTeam() -> Response:
@@ -95,7 +96,7 @@ def createTeam() -> Response:
 
 @team_frontend.route('/send-team-invitation',
                      methods=['POST'], endpoint='send-team-invitation')
-@limiter.limit('2 per minute')
+@limiter.limit('50 per day, 10 per hour, 2 per minute')
 @jwt_required()
 @SendTeamInvitationInputFilter.validate()
 def sendTeamInvitation() -> Response:
@@ -104,7 +105,7 @@ def sendTeamInvitation() -> Response:
 
 @team_frontend.route('/accept-team-invitation/<hash>',
                      methods=['POST'], endpoint='accept-team-invitation')
-@limiter.limit('2 per minute')
+@limiter.limit('50 per day, 10 per hour, 2 per minute')
 @jwt_required()
 @AcceptTeamInvitationInputFilter.validate()
 def acceptTeamInvitation(hash) -> Response:

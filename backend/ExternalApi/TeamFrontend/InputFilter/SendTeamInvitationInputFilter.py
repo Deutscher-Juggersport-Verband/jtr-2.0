@@ -4,7 +4,6 @@ from flask_inputfilter.Validator import IsIntegerValidator
 
 
 class SendTeamInvitationInputFilter(InputFilter):
-    """The input filter for the send-team-invitation route"""
 
     def __init__(self) -> None:
 

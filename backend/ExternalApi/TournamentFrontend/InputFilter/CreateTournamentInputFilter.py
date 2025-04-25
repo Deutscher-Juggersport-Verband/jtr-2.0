@@ -27,7 +27,6 @@ from DataDomain.Database.Enum import (
 
 
 class CreateTournamentInputFilter(InputFilter):
-    """The input filter for the create-tournament route"""
 
     def __init__(self) -> None:
 

@@ -6,7 +6,6 @@ from Infrastructure.Logger import logger
 
 
 class UserRepository:
-    """Repository for user related queries"""
 
     @staticmethod
     def get(userId: int) -> Users:

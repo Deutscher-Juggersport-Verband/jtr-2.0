@@ -3,7 +3,6 @@ from dataclasses import asdict, dataclass
 
 @dataclass
 class SendMailTaskBody:
-    """Class representing the body of a SendMailTask"""
 
     subject: str
     recipients: list[str]

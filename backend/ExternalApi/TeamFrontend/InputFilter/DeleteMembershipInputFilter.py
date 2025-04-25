@@ -4,7 +4,6 @@ from flask_inputfilter.Validator import IsIntegerValidator
 
 
 class DeleteMembershipInputFilter(InputFilter):
-    """The input filter for the delete-membership route"""
 
     def __init__(self) -> None:
 

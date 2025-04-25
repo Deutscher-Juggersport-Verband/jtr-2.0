@@ -8,7 +8,6 @@ from DataDomain.Model import Response
 
 
 class CreateUserHandler:
-    """Handler for creating a user"""
 
     @staticmethod
     def handle() -> Response:

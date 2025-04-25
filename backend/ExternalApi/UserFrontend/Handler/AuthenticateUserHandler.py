@@ -7,7 +7,6 @@ from DataDomain.Model import Response
 
 
 class AuthenticateUserHandler:
-    """Handler to login user"""
 
     @staticmethod
     def handle() -> Response:

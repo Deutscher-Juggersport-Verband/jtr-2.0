@@ -21,8 +21,8 @@ class UpdateUserLanguageHandler:
                 )
             )
 
-        except Exception as e:
-            return Response(status=500, response=str(e))
+        except Exception:
+            return Response(status=500)
 
         return Response(
             status=200

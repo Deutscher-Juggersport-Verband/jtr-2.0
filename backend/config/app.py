@@ -16,7 +16,6 @@ from ExternalApi.UserFrontend.config import user_frontend
 
 
 def createApp() -> Flask:
-    """Creates the Flask app"""
 
     app = Flask(__name__)
     Config.init_app(app)
