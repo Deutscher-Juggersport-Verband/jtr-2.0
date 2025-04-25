@@ -1,6 +1,6 @@
 import os
 from datetime import date, datetime
-from typing import Any, Dict, List
+from typing import Any
 
 from sqlalchemy import Case, case, func, literal
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -110,13 +110,13 @@ class Users(BaseModel, db.Model):
         onupdate=func.now()
     )
 
-    teams: Mapped[List['Teams']] = db.relationship(
+    teams: Mapped[list['Teams']] = db.relationship(
         'Teams',
         secondary=is_part_of,
         back_populates='team_members'
     )
 
-    def serialize(self) -> Dict[str, Any]:
+    def serialize(self) -> dict[str, Any]:
         """
         Serializes the object as a dictionary.
         """

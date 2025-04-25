@@ -1,5 +1,3 @@
-from typing import List
-
 from BusinessDomain.User.Repository import UserRepository
 from BusinessDomain.User.UseCase.QueryHandler.Result.GetUserOverviewResult import (
     GetUserOverviewResult,
@@ -9,7 +7,7 @@ from BusinessDomain.User.UseCase.QueryHandler.Result.GetUserOverviewResult impor
 class GetUserOverviewQueryHandler:
 
     @staticmethod
-    def execute() -> List[GetUserOverviewResult]:
+    def execute() -> list[GetUserOverviewResult]:
 
         users = UserRepository.all()
 

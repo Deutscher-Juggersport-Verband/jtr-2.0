@@ -1,5 +1,3 @@
-from typing import List
-
 from DataDomain.Database.Model import Tournaments, Users
 from Infrastructure.Mail.Tournament import SendTournamentSubscriptionNotificationMail
 
@@ -9,7 +7,7 @@ class SendTournamentSubscriptionNotificationsMail:
 
     @staticmethod
     def send(
-            users: List[Users],
+            users: list[Users],
             tournament: Tournaments,
             message: str) -> None:
 

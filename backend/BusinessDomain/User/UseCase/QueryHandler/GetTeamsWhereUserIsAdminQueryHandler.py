@@ -1,5 +1,3 @@
-from typing import List
-
 from BusinessDomain.Team.Repository import TeamRepository
 from BusinessDomain.User.UseCase.QueryHandler.Query import GetTeamsWhereUserIsAdminQuery
 from BusinessDomain.User.UseCase.QueryHandler.Result.GetTeamsWhereUserIsAdminResult import (
@@ -10,7 +8,7 @@ class GetTeamsWhereUserIsAdminQueryHandler:
 
     @staticmethod
     def execute(
-            query: GetTeamsWhereUserIsAdminQuery) -> List[GetTeamsWhereUserIsAdminResult]:
+            query: GetTeamsWhereUserIsAdminQuery) -> list[GetTeamsWhereUserIsAdminResult]:
 
         teams = TeamRepository.teamsOfAdmin(query.userId)
 

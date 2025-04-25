@@ -1,5 +1,3 @@
-from typing import List
-
 from BusinessDomain.Team.Repository import TeamRepository
 from BusinessDomain.Team.UseCase.QueryHandler.Result import TeamOverviewQueryResult
 
@@ -7,7 +5,7 @@ from BusinessDomain.Team.UseCase.QueryHandler.Result import TeamOverviewQueryRes
 class GetTeamOverviewQueryHandler:
 
     @staticmethod
-    def execute() -> List[TeamOverviewQueryResult]:
+    def execute() -> list[TeamOverviewQueryResult]:
 
         teams = TeamRepository.all()
 

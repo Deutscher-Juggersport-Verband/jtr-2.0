@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import List
 
 from sqlalchemy import and_, desc, func, or_
 from sqlalchemy.orm import aliased, joinedload
@@ -16,7 +15,7 @@ class TournamentRepository:
     """Repository for tournament related queries"""
 
     @staticmethod
-    def all() -> List[TournamentOverviewModelElement]:
+    def all() -> list[TournamentOverviewModelElement]:
 
         currentTime = datetime.now()
 
@@ -56,7 +55,7 @@ class TournamentRepository:
         ).all()
 
     @staticmethod
-    def getPastTournamentOverview() -> List[TournamentOverviewModelElement]:
+    def getPastTournamentOverview() -> list[TournamentOverviewModelElement]:
 
         currentTime = datetime.now()
 
