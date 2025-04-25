@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List, Optional
+from typing import Optional
 
 from DataDomain.Database.Enum import (
     TournamentAccommodationTypesEnum,
@@ -59,7 +59,7 @@ class Organizer:
     name: str
     aboutUs: str
     city: str
-    contacts: List[str]
+    contacts: list[str]
     createdAt: datetime
     founded: Optional[str]
     isMixTeam: bool
@@ -98,7 +98,7 @@ class TeamData:
     id: int
     aboutUs: str
     city: str
-    contacts: List[str]
+    contacts: list[str]
     createdAt: datetime
     escapedName: str
     founded: Optional[str]
@@ -115,8 +115,8 @@ class TeamData:
 @dataclass
 class Teams:
 
-    participating: List[TeamData]
-    waiting: List[TeamData]
+    participating: list[TeamData]
+    waiting: list[TeamData]
 
 
 @dataclass
@@ -135,7 +135,7 @@ class GetTournamentDetailsResult:
     additionalInformation: str
     address: str
     arrivalDate: ArrivalDate
-    contacts: List[str]
+    contacts: list[str]
     costs: Costs
     createdAt: datetime
     date: ArrivalDate

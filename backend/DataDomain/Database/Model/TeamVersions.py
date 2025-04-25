@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from typing import Any, Dict, Self
+from typing import Any, Self
 
 from sqlalchemy import func
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -40,7 +40,7 @@ class TeamVersions(BaseModel, db.Model):
         nullable=False,
     )
 
-    def serialize(self) -> Dict[str, Any]:
+    def serialize(self) -> dict[str, Any]:
         """
         Serializes the object as a dictionary.
         """
@@ -52,14 +52,14 @@ class TeamVersions(BaseModel, db.Model):
         return serialized
 
     @hybrid_property
-    def getChanges(self) -> Dict[str, Any]:
+    def getChanges(self) -> dict[str, Any]:
         """
         Parses the JSON string from the database and returns the changes as a dictionary.
         """
 
         return json.loads(self.changes)
 
-    def setChanges(self, changesDict: Dict[str, Any]) -> Self:
+    def setChanges(self, changesDict: dict[str, Any]) -> Self:
         """
         Takes the dictionary and safes it as a JSON-String in the 'changes' column.
         """

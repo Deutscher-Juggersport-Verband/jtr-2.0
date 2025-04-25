@@ -1,7 +1,7 @@
 import json
 import os
 from datetime import datetime
-from typing import Any, Dict, List
+from typing import Any
 
 from sqlalchemy import Case, case, func, literal
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -97,29 +97,29 @@ class Teams(BaseModel, db.Model):
         onupdate=func.now()
     )
 
-    team_members: Mapped[List['Users']] = db. relationship(
+    team_members: Mapped[list['Users']] = db. relationship(
         'Users',
         secondary=is_part_of,
         back_populates='teams'
     )
 
-    tournaments: Mapped[List['Tournaments']] = db.relationship(
+    tournaments: Mapped[list['Tournaments']] = db.relationship(
         'Tournaments',
         secondary=participates_in,
         back_populates='teams'
     )
 
-    organized_tournaments: Mapped[List['Tournaments']] = db.relationship(
+    organized_tournaments: Mapped[list['Tournaments']] = db.relationship(
         'Tournaments',
         back_populates='organizer'
     )
 
-    historic_points: Mapped[List['HistoricTeamPoints']] = db.relationship(
+    historic_points: Mapped[list['HistoricTeamPoints']] = db.relationship(
         'HistoricTeamPoints',
         back_populates='team'
     )
 
-    def serialize(self) -> Dict[str, Any]:
+    def serialize(self) -> dict[str, Any]:
         """
         Serializes the object as a dictionary.
         """
@@ -138,7 +138,7 @@ class Teams(BaseModel, db.Model):
         return serialized
 
     @hybrid_property
-    def getContacts(self) -> List[str]:
+    def getContacts(self) -> list[str]:
         """
         Parses the JSON string from the database and returns the changes as a dictionary.
         """

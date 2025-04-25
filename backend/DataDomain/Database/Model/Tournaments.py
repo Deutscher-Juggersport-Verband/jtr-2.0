@@ -1,6 +1,5 @@
 import json
 from datetime import datetime
-from typing import List
 
 from sqlalchemy import Column, Enum, func
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -270,14 +269,14 @@ class Tournaments(BaseModel, db.Model):
         back_populates='organized_tournaments'
     )
 
-    teams: Mapped[List['Teams']] = db.relationship(
+    teams: Mapped[list['Teams']] = db.relationship(
         'Teams',
         secondary=participates_in,
         back_populates='tournaments'
     )
 
     @hybrid_property
-    def getContacts(self) -> List[str]:
+    def getContacts(self) -> list[str]:
         """
         Parses the JSON string from the database and returns the changes as a dictionary.
         """

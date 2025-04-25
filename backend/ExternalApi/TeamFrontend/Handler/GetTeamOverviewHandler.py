@@ -1,4 +1,3 @@
-
 from BusinessDomain.Team.UseCase.QueryHandler import GetTeamOverviewQueryHandler
 from DataDomain.Model import Response
 

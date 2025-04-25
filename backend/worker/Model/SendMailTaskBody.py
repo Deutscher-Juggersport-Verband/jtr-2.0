@@ -1,5 +1,4 @@
 from dataclasses import asdict, dataclass
-from typing import List
 
 
 @dataclass
@@ -7,7 +6,7 @@ class SendMailTaskBody:
     """Class representing the body of a SendMailTask"""
 
     subject: str
-    recipients: List[str]
+    recipients: list[str]
     body: str
     html: str | None
 

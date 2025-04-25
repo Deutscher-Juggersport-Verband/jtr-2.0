@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import List
 
 from BusinessDomain.Tournament.Model import ResultElement
 
@@ -8,4 +7,4 @@ from BusinessDomain.Tournament.Model import ResultElement
 class CreateResultCommand:
 
     tournamentId: int
-    resultElements: List[ResultElement]
+    resultElements: list[ResultElement]

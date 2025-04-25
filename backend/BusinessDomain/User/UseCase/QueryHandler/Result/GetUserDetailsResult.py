@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from datetime import date, datetime
-from typing import List
 
 
 @dataclass
@@ -24,7 +23,7 @@ class GetUserDetailsResult:
     isNameVisible: bool
     pictureUrl: str
     pronouns: str
-    teams: List[TeamResult]
+    teams: list[TeamResult]
     updatedAt: datetime
     username: str
     name: str | None = None
